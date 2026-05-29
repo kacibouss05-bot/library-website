@@ -1,0 +1,217 @@
+.hero {
+  width: 100%;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(61, 31, 13, 0.6);
+  padding: 50px 60px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 700px;
+}
+
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #FAF3E8;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(250, 243, 232, 0.85);
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.7;
+}
+
+.hero-advanced-link {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FAF3E8;
+  border-bottom: 1px solid rgba(250, 243, 232, 0.6);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.hero-advanced-link:hover {
+  border-color: #FAF3E8;
+}
+
+.hero-btn {
+  margin-top: 8px;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #FAF3E8;
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* SUJETS POPULAIRES */
+.popular-subjects {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 40px;
+}
+
+.popular-subjects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.subjects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.subject-tag {
+  padding: 12px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.subject-tag:hover {
+  background: var(--primary);
+  color: #FAF3E8;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 82, 26, 0.25);
+}
+
+/* DERNIÈRES MODIFICATIONS */
+.recent-changes {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.recent-changes h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.change-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.change-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(61, 31, 13, 0.12);
+}
+
+.change-card-cover {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.change-card-no-cover {
+  font-size: 48px;
+  opacity: 0.4;
+}
+
+.change-card-info {
+  padding: 16px;
+}
+
+.change-card-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.change-type {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.change-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 360px;
+  }
+
+  .hero-overlay {
+    padding: 30px 24px;
+  }
+
+  .recent-changes {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+
+  .popular-subjects {
+    padding: 0 20px;
+    margin: 40px auto 0;
+  }
+}

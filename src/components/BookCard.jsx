@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import './BookCard.css'
 
 function BookCard({ book }) {
   const navigate = useNavigate()

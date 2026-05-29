@@ -73,3 +73,14 @@ export async function getAuthorById(authorId) {
   const data = await response.json()
   return data
 }
+export async function getWorkDetails(key) {
+  if (!key || typeof key !== 'string') return null
+  try {
+    const response = await fetch(`${BASE_URL}${key}.json`)
+    if (!response.ok) return null
+    const data = await response.json()
+    return data
+  } catch {
+    return null
+  }
+}

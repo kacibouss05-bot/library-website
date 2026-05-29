@@ -4,6 +4,7 @@ import useSearch from '../hooks/useSearch'
 import BookCard from '../components/BookCard'
 import LoadingSpinner from '../components/LoadingSpinner'
 import ErrorMessage from '../components/ErrorMessage'
+import './SearchPage.css'
 
 function SearchPage() {
   const [searchParams] = useSearchParams()
