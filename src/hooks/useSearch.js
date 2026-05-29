@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useCallback, useState } from 'react'
 import { searchBooks } from '../services/openLibraryApi'
 
 function useSearch() {
@@ -8,8 +8,9 @@ function useSearch() {
   const [totalPages, setTotalPages] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
 
-  async function search(filters = {}, page = 1) {
-    const hasFilter = Object.values(filters).some(v => v && v.trim() !== '')
+  const search = useCallback(async (filters = {}, page = 1) => {
+    const hasFilter = Object.values(filters).some((value) => value && value.trim() !== '')
+
     if (!hasFilter) {
       setError('Veuillez remplir au moins un champ de recherche')
       return
@@ -28,9 +29,10 @@ function useSearch() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
   return { results, loading, error, totalPages, currentPage, search }
 }
 
 export default useSearch
+

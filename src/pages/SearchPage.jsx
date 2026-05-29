@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import useSearch from '../hooks/useSearch'
 import BookCard from '../components/BookCard'
@@ -7,27 +7,26 @@ import ErrorMessage from '../components/ErrorMessage'
 
 function SearchPage() {
   const [searchParams] = useSearchParams()
+  const initialQuery = searchParams.get('q') || ''
   const { results, loading, error, totalPages, currentPage, search } = useSearch()
 
   const [filters, setFilters] = useState({
-    q: '',
+    q: initialQuery,
     author: '',
     subject: '',
     publisher: '',
     language: '',
-    publish_year: ''
+    publish_year: '',
   })
 
   useEffect(() => {
-    const q = searchParams.get('q') || ''
-    if (q) {
-      setFilters(prev => ({ ...prev, q }))
-      search({ q }, 1)
+    if (initialQuery) {
+      search({ q: initialQuery }, 1)
     }
-  }, [searchParams])
+  }, [initialQuery, search])
 
   function handleChange(e) {
-    setFilters(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    setFilters((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   function handleSubmit(e) {
@@ -119,3 +118,4 @@ function SearchPage() {
 }
 
 export default SearchPage
+
